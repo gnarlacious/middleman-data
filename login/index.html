@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
+    <title>Login</title>
+    <link href="../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='login login_index'>
+    <form action="/login" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" /><fieldset><p>
+      <label for="Email">Email: </label>
+      <input type="text" name="Email" placeholder="Email" />
+    </p>
+    <p>
+      <label for="Password">Password: </label>
+      <input type="password" name="Password" placeholder="Password" />
+    </p>
+    <input type="submit" value="Login" />
+    </fieldset>
+    </form>
+    <script src="../assets/javascripts/application.js"></script>
+  </body>
+</html>
