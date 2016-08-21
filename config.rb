@@ -23,6 +23,12 @@ configure :development do
   activate :livereload
 end
 
+# Create assets folder to mimic rails
+set :images_dir, 'assets/images'
+set :css_dir, 'assets/stylesheets'
+set :js_dir, 'assets/javascripts'
+set :helpers_dir, 'helpers'
+
 # User pages
 data.users.each do |user|
 	slug = user.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
