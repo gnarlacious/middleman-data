@@ -1,0 +1,21 @@
+---
+title: User Page
+---
+
+= image_tag "#{user['avatar']}"
+%p
+	%b Name:
+	%span= user['name']
+%p
+	%b Username:
+	%span= user['username']
+%p
+	%b Email:
+	= link_to user['email'], "mailto:#{user['email']}"
+%p
+	%b Phone:
+	= link_to user['phone'], "tel:#{user['phone']}"
+
+%p
+	%b Website
+	= link_to user['email'], "#{user['website']}"
