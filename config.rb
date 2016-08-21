@@ -13,10 +13,16 @@ page '/*.txt', layout: false
 # page "/path/to/file.html", layout: :otherlayout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
+
+# Dynamix User pages
+data.users.each do |user|
+	slug = user.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+	proxy "/#{slug}/index.html", "/user.html", :locals => { :user => user }, :ignore => true
+end
 
 # General configuration
+
+activate :directory_indexes
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -27,13 +33,6 @@ end
 set :images_dir, 'assets/images'
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
-set :helpers_dir, 'helpers'
-
-# User pages
-data.users.each do |user|
-	slug = user.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-	proxy "/#{slug}/index.html", "/user.html", :locals => { :user => user }, :ignore => true
-end
 
 ###
 # Helpers
@@ -54,6 +53,7 @@ configure :build do
 	# Relative links for Github project page
 	activate :relative_assets
 	set :relative_links, true
+
   # Minify CSS on build
   activate :minify_css
 
