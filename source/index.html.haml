@@ -2,6 +2,7 @@
 title: Welcome to Middleman
 ---
 
+%h1 User List
 %ul
 	- data.users.each do |user|
 		%li= link_to user.name, slug(user.name)
