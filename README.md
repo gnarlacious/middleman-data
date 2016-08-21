@@ -12,3 +12,9 @@ Clone the repository and `cd` into the project folder.
 $ git clone https://github.com/gnarlacious/middleman-data.git project-folder
 $ cd project-folder
 ```
+
+Lastly, install the gem dependencies
+
+```
+$ bundle install
+```
